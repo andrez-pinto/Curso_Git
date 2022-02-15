@@ -1,0 +1,46 @@
+    1  history
+    2  clear
+    3  git config --global user.name 'Andres Pinto'
+    4  git config --global user.email 'andrespinto0327@gmail.com'
+    5  git configuser.name
+    6  git config user.name
+    7  cd ~
+    8  ls
+    9  cd Documents
+   10  ls
+   11  cd DS_Toti
+   12  mkdir Curso_Git
+   13  pwd
+   14  cd Curso_Git/
+   15  pwd
+   16  git config user.name
+   17  git init
+   18  git status
+   19  echo '#Aprendendo usar o Git' > readme.md
+   20  ls
+   21  cat readme.md 
+   22  git status
+   23  git add readme.md 
+   24  git status
+   25  git commit -m 'Commit inicial'
+   26  git status
+   27  echo '##Aula 1' >> readme.md 
+   28  cat readme.md 
+   29  git status
+   30  echo 'Andres Pinto' > participante.txt
+   31  git status
+   32  git add .
+   33  git status
+   34  git restore --staged participante.txt
+   35  git status
+   36  git add participante.txt 
+   37  git status
+   38  git restore --staged .
+   39  git status
+   40  git commit -am 'Alteracao no readme'
+   41  git status
+   42  git add participante.txt 
+   43  git status
+   44  git commit -m 'Adicionando participantes'
+   45  git status
+   46  history > Aula_3.txt
