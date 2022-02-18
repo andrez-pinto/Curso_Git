@@ -1,0 +1,42 @@
+    1  clear
+    2  git branch
+    3  git status
+    4  cd Documents
+    5  cd DS_Toti/Curso_Git
+    6  git status
+    7  git branch
+    8  git checkout -b feature
+    9  git branch
+   10  touch Nova_feature
+   11  git status
+   12  git add Nova_feature 
+   13  git commit -m 'Adicionando nova feature'
+   14  git log
+   15  git checkout master
+   16  git status
+   17  git log
+   18  touch continuando_master
+   19  git add continuando_master 
+   20  git commit -m 'Adicionando continuando_master'
+   21  git status
+   22  git log
+   23  git checkout feature
+   24  git log
+   25  git checkout -b feature2 master
+   26  git log
+   27  git branch -d feature2
+   28  git checkout master
+   29  git branch -d feature2
+   30  git log
+   31  clear
+   32  git checkout feature
+   33  git log --prety=oneline --graph
+   34  git log --pretty=oneline --graph
+   35  git merge master
+   36  git log
+   37  git log --pretty=oneline --graph
+   38  git reset --hard HEAD~
+   39  git log --pretty=oneline --graph
+   40  git rebase master
+   41  git log --pretty=oneline --graph
+   42  history > Aula_5.txt
