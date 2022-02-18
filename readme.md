@@ -1,3 +1,4 @@
+
 # APRENDENDO USAR O GIT
 
 ## Aula 1
@@ -396,5 +397,6 @@ Seguir os mesmos passos acima, porém marcar os commtis que devem ser juntados c
 # Contribuições
 
 Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!
+
 
 
