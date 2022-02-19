@@ -1,3 +1,4 @@
+
 # APRENDENDO USAR O GIT
 
 ## Aula 1
@@ -339,5 +340,6 @@ Fazendo o **rebase** entre um o branch e o master.
 # Contribuições
 
 Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!
+
 
 
