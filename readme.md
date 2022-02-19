@@ -142,12 +142,6 @@ Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo *
 
 	git log -- <caminho_do_arquivo>
 
-##### Exibir histórico modificação de um arquivo
-
-	git log --diff-filter=M -- <caminho_do_arquivo>
-
-* O <D> pode ser substituido por: Adicionado (A), Copiado (C), Apagado (D), Modificado (M), Renomeado (R), entre outros.
-
 ##### Exibir histório de um determinado autor
 
 	git log --author=usuario
@@ -187,7 +181,7 @@ A alteração do diretório pode ser realizada através do comando abaixo:
 
 ### Vincular repositório local com um repositório remoto
 
-	git remote add origin https://github.com/andrez-pinto/Curso_Git.git
+	git remote add origin https://github.com/andrez-pinto/...
 	
 ### Exibir informações dos repositórios remotos
 
@@ -221,7 +215,7 @@ Os demais **pushes** não precisam dessa informação
 	
 ### Clonar um repositório remoto já existente
 
-	git clone https://github.com/andrez-pinto/Curso_Git.git(HTTP,SSH, Github CLI)
+	git clone https://github.com/andrez-pinto/...(HTTP,SSH, Github CLI)
 	
 ### Tags
 
