@@ -91,6 +91,10 @@ Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo *
 ##### Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)
 	
 	git add -f arquivo_no_gitignore.txt
+
+#### Alternativa a .gitignore
+
+	nano .gitignore
 	
 ### Comitar arquivo/diretório
 
@@ -133,15 +137,6 @@ Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo *
 ##### Exibir informações resumidas em uma linha (hash completa e comentário)
 
 	git log --pretty=oneline
-	
-##### Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
-
-	git log --pretty=format:"%h - %an, %ar : %s"
-	
-* %h: Abreviação do hash;
-* %an: Nome do autor;
-* %ar: Data;
-* %s: Comentário.
 
 ##### Exibir histório de um arquivo específico
 
@@ -192,7 +187,7 @@ A alteração do diretório pode ser realizada através do comando abaixo:
 
 ### Vincular repositório local com um repositório remoto
 
-	git remote add origin git@github.com:leocomelli/curso-git.git
+	git remote add origin https://github.com/andrez-pinto/Curso_Git.git
 	
 ### Exibir informações dos repositórios remotos
 
@@ -223,13 +218,10 @@ Os demais **pushes** não precisam dessa informação
 
 	git pull
 	
-##### Buscar as alterações, mas não aplica-las no branch atual
-
-	git fetch
 	
 ### Clonar um repositório remoto já existente
 
-	git clone git@github.com:leocomelli/curso-git.git
+	git clone https://github.com/andrez-pinto/Curso_Git.git(HTTP,SSH, Github CLI)
 	
 ### Tags
 
@@ -239,12 +231,12 @@ Os demais **pushes** não precisam dessa informação
 
 ##### Criando uma tag anotada
 
-	git tag -a vs-1.1 -m "Minha versão 1.1"
+	git tag -a vs-1.1 -m "versão 1.1"
 
 ##### Criando uma tag assinada
 Para criar uma tag assinada é necessário uma chave privada (GNU Privacy Guard - GPG).
 
-	git tag -s vs-1.1 -m "Minha tag assinada 1.1"
+	git tag -s vs-1.1 -m "nome tag 1.1"
 
 ##### Criando tag a partir de um commit (hash)
 
@@ -266,17 +258,17 @@ O **HEAD** é um ponteiro *especial* que indica qual é o branch atual. Por padr
 
 ##### Criando um novo branch
 
-	git branch bug-123
+	git branch feature
 	
 ##### Trocando para um branch existente
 
-	git checkout bug-123
+	git checkout feature
 	
-Neste caso, o ponteiro principal **HEAD** esta apontando para o branch chamado bug-123.
+Neste caso, o ponteiro principal **HEAD** esta apontando para o branch chamado feature.
 
 ##### Criar um novo branch e trocar 
 
-	git checkout -b bug-456
+	git checkout -b feature
 	
 ##### Voltar para o branch principal (master)
 
@@ -284,7 +276,7 @@ Neste caso, o ponteiro principal **HEAD** esta apontando para o branch chamado b
 	
 ##### Resolver merge entre os branches
 
-	git merge bug-123
+	git merge feature
 	
 Para realizar o *merge*, é necessário estar no branch que deverá receber as alterações. O *merge* pode automático ou manual. O merge automático será feito em arquivos textos que não sofreram alterações nas mesmas linhas, já o merge manual será feito em arquivos textos que sofreram alterações nas mesmas linhas.
 
@@ -297,7 +289,7 @@ A mensagem indicando um *merge* manual será:
 
 ##### Apagando um branch
 
-	git branch -d bug-123
+	git branch -d feature
 
 ##### Listar branches 
 
@@ -321,78 +313,35 @@ A mensagem indicando um *merge* manual será:
 
 ###### Criando um branch remoto com o mesmo nome
 
-	git push origin bug-123
+	git push origin feature
 
 ###### Criando um branch remoto com nome diferente
 
-	git push origin bug-123:new-branch
+	git push origin feature:novo_branch
 
 ##### Baixar um branch remoto para edição
 
-	git checkout -b bug-123 origin/bug-123
+	git checkout -b feature origin/feature
 
 
 ##### Apagar branch remoto
 
-	git push origin:bug-123
+	git push origin:feature
 
 ### Rebasing
 
-Fazendo o **rebase** entre um o branch bug-123 e o master.
+Fazendo o **rebase** entre um o branch e o master.
 
-	git checkout experiment
+	git checkout nome_branch
 	
 	git rebase master
 	
 
-Mais informações e explicações sobre o [Rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing)
-
-
-### Reescrevendo o histórico
-
-##### Alterando mensagens de commit
+#### Alterando mensagens de commit
 
 	git commit --amend -m "nova mensagem"
 
-##### Alterar últimos commits
-Alterando os três últimos commits
 
-	git rebase -i HEAD~3
-
-O editor de texto será aberto com as linhas representando os três últimos commits.
-
-	pick f7f3f6d changed my name a bit
-	pick 310154e updated README formatting and added blame
-	pick a5f4a0d added catfile
-
-Altere para edit os commits que deseja realizar alterações.
-
-	edit f7f3f6d changed my name a bit
-	pick 310154e updated README formatting and added blame
-	pick a5f4a0d added catfile
-
-Feche o editor de texto.
-
-Digite o comando para alterar a mensagem do commit que foi marcado como *edit*.
-
-	git commit –amend -m “Nova mensagem”
-
-Aplique a alteração
-
-	git rebase --continue
-
-**Atenção:** É possível alterar a ordem dos commits ou remover um commit apenas
-mudando as linhas ou removendo.
-
-
-##### Juntando vários commits
-Seguir os mesmos passos acima, porém marcar os commtis que devem ser juntados com **squash*
-	
-##### Remover todo histórico de um arquivo
-
-	git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
-	
- 	
 # Contribuições
 
 Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!
